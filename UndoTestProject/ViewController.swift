@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 
     func updateView() {
         tileView.backgroundColor = model.getTileColor()
-        document.saveToURL(document.fileURL,forSaveOperation:UIDocumentSaveOperation.ForOverwriting,completionHandler:nil)
+   //     document.saveToURL(document.fileURL,forSaveOperation:UIDocumentSaveOperation.ForOverwriting,completionHandler:nil)
     }
 
     @IBAction func ColorButtonPushed(sender: AnyObject) {
@@ -56,6 +56,7 @@ class ViewController: UIViewController {
             currentlySelectedButton?.selected = false
             currentlySelectedButton = button
             button.selected = true
+            document.updateChangeCount(UIDocumentChangeKind.Done)
         }
         
         updateView()
