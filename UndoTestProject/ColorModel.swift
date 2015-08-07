@@ -10,9 +10,14 @@ import UIKit
 
 class ColorModel: NSObject {
     var tile:ColorTile = ColorTile()
+    var undoManager:NSUndoManager!
     
     func changeColorOfTile(color:UIColor) {
+        let oldColor = tile.color
         tile.color = color
+        
+        undoManager.setActionName("ColorChanged")
+        undoManager.registerUndoWithTarget(self, selector: "changeColorOfTile:", object: oldColor)
     }
     
     func getTileColor() -> UIColor {

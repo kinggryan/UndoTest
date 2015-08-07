@@ -84,6 +84,15 @@
                                     <constraint firstAttribute="height" constant="300" id="7CJ-R1-tAs"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqd-L6-0es">
+                                <rect key="frame" x="443" y="86" width="46" height="30"/>
+                                <state key="normal" title="Undo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="undoButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qmq-9j-y0c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -92,6 +101,8 @@
                             <constraint firstAttribute="centerX" secondItem="NxG-7F-fGR" secondAttribute="centerX" id="9ys-GM-tpG"/>
                             <constraint firstItem="3Kc-1T-ouX" firstAttribute="centerX" secondItem="krv-s2-Dr8" secondAttribute="centerX" id="Ifk-Ch-d3Q"/>
                             <constraint firstItem="NxG-7F-fGR" firstAttribute="top" secondItem="krv-s2-Dr8" secondAttribute="bottom" constant="8" id="K9f-YJ-M1K"/>
+                            <constraint firstItem="mqd-L6-0es" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="MRy-e6-li4"/>
+                            <constraint firstItem="mqd-L6-0es" firstAttribute="leading" secondItem="oAa-7T-dhO" secondAttribute="trailing" constant="26" id="Nab-vW-uy3"/>
                             <constraint firstAttribute="centerX" secondItem="oAa-7T-dhO" secondAttribute="centerX" constant="-0.5" id="U1u-19-jIp"/>
                             <constraint firstItem="3Kc-1T-ouX" firstAttribute="centerX" secondItem="xea-JT-trd" secondAttribute="centerX" id="hqK-SB-XVD"/>
                             <constraint firstAttribute="centerY" secondItem="oAa-7T-dhO" secondAttribute="centerY" constant="64" id="hrU-Bh-SAe"/>

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let filePath:String = "tilefile"
     let documentDirectory:NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0] as! NSURL
     
+    
     @IBOutlet weak var tileView: UIView!
     
     override func viewDidLoad() {
@@ -38,6 +39,8 @@ class ViewController: UIViewController {
             document.tile = model.tile
             document.saveToURL(url, forSaveOperation: UIDocumentSaveOperation.ForCreating, completionHandler: nil)
         }
+        
+        model.undoManager = document.undoManager
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +62,12 @@ class ViewController: UIViewController {
             document.updateChangeCount(UIDocumentChangeKind.Done)
         }
         
+        updateView()
+    }
+    
+    @IBAction func undoButtonPushed(sender: AnyObject) {
+        document.undoManager.undo()
+        model.tile = document.tile
         updateView()
     }
 }
